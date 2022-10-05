@@ -28,12 +28,16 @@ class Employee:
         description = self.name
         if self.salary > 0:
             description += (" works on a monthly salary of " + str(self.salary))
+            if self.contracts_landed > 0:
+                description += (" and receives a commission for " + str(self.contracts_landed) + " contract(s) at " + str(self.contract_commission) + "/contract")
             if self.bonus_commission > 0:
                 description += (" and receives a bonus commission of " + str(self.bonus_commission) + ".")
             else:
                 description += "."
         else:
-            description += (" works on a contract of " + str(self.contract_hours) + " at " + str(self.hourly_wage))
+            description += (" works on a contract of " + str(self.contract_hours) + " hours" + " at " + str(self.hourly_wage) + "/hour")
+            if self.bonus_commission > 0:
+                description += (" and receives a bonus commission of " + str(self.bonus_commission))
             if self.contracts_landed > 0:
                 description += (" and receives a commission for " + str(self.contracts_landed) + " contract(s) at " + str(self.contract_commission) + "/contract.")
             else:
@@ -67,4 +71,7 @@ print(jan.get_pay())
 print(robbie.get_pay())
 print(ariel.get_pay())
 
-print(billie)
+print(charlie)
+print(renee)
+print(jan)
+print(ariel)
